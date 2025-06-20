@@ -1,4 +1,4 @@
-Feature: Marvel Characters API
+Feature: Marvel Characters API evaluacion PB
 
   Background:
     * url 'http://bp-se-test-cabcd9b246a5.herokuapp.com'
