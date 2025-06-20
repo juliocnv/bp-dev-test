@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"karate-test[1:8]","start":1750442248068,"end":1750442251160,"title":"karate-test[1:8] 12:57:28.068-12:57:31.160 Obtener todos los personajes"},{"id":2,"group":1,"content":"karate-test[2:13]","start":1750442251226,"end":1750442252648,"title":"karate-test[2:13] 12:57:31.226-12:57:32.648 Crear personaje (faltan campos requeridos)"},{"id":3,"group":1,"content":"karate-test[3:29]","start":1750442252670,"end":1750442253913,"title":"karate-test[3:29] 12:57:32.670-12:57:33.913 Actualizar personaje (no existe)"},{"id":4,"group":1,"content":"karate-test[4:45]","start":1750442253927,"end":1750442255144,"title":"karate-test[4:45] 12:57:33.927-12:57:35.144 Eliminar personaje (no existe)"},{"id":5,"group":1,"content":"karate-test[5:51]","start":1750442255166,"end":1750442256380,"title":"karate-test[5:51] 12:57:35.166-12:57:36.380 Obtener personaje por ID (exitoso)"},{"id":6,"group":1,"content":"karate-test[6:57]","start":1750442256390,"end":1750442257589,"title":"karate-test[6:57] 12:57:36.390-12:57:37.589 Crear personaje (nombre duplicado)"},{"id":7,"group":1,"content":"karate-test[7:73]","start":1750442257607,"end":1750442258821,"title":"karate-test[7:73] 12:57:37.607-12:57:38.821 Obtener personaje por ID (no existe)"},{"id":8,"group":1,"content":"karate-test[8:79]","start":1750442258833,"end":1750442260045,"title":"karate-test[8:79] 12:57:38.833-12:57:40.045 Actualizar personaje (exitoso)"},{"id":9,"group":1,"content":"karate-test[9:95]","start":1750442260071,"end":1750442261305,"title":"karate-test[9:95] 12:57:40.071-12:57:41.305 Crear personaje (exitoso)"},{"id":10,"group":1,"content":"karate-test[10:111]","start":1750442261317,"end":1750442262535,"title":"karate-test[10:111] 12:57:41.317-12:57:42.535 Eliminar personaje (exitoso)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
